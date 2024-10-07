@@ -19,8 +19,10 @@ connectCloudinary()
 
 
 //middlewares
-app.use(cors())
-app.use(express.json())
+app.use(cors({
+    origin: 'https://react-project-nmpm.onrender.com' // Change this to your frontend's URL
+  }));app.use(express.json())
+
 app.use(express.urlencoded({ extended: true }));
 
 
