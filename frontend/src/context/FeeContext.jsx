@@ -68,7 +68,7 @@ const FeeContextProvider = (props) => {
 
 
 
-// load for state
+    // load for state
     useEffect(() => {
 
         getAllFees()
@@ -77,11 +77,17 @@ const FeeContextProvider = (props) => {
     }, [])
 
     useEffect(() => {
+
+        getAllHistories()
+        
+    }, [fees])
+
+    useEffect(() => {
         if (fees.length > 0 && listFees.length === 0) {
             initListFees();
             console.log(fees);
         } else {
-            setListFees(listFees.map(f => fees.find(temp => temp._id === f._id) ))
+            setListFees(listFees.map(f => fees.find(temp => temp._id === f._id)))
         }
     }, [fees]);
 
