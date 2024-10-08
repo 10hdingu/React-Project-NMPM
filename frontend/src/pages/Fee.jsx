@@ -74,7 +74,7 @@ const Fee = () => {
       const today = new Date()
 
       if (filters.includes('HET_HAN_TRONG_1_TUAN')) {
-        searchFee = searchFee.filter(f => getDaysBetweenDates(f.deadline, today) <= 7)
+        searchFee = searchFee.filter(f => getDaysBetweenDates(f.deadline, today) <= 7 && getDaysBetweenDates(f.deadline, today) >= 0)
       }
 
       if (filters.includes('DA_HOAN_THANH')) {

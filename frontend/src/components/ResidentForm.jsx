@@ -45,7 +45,7 @@ const ResidentForm = () => {
             getAllResidents()
         }
 
-    }, [token])
+    }, [token, residents])
 
 
     useEffect(() => {

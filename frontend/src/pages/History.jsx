@@ -56,11 +56,11 @@ const History = () => {
       <section className='flex justify-between py-6 items-center'>
         <p className='text-2xl font-bold text-gray-600'>Lịch sử cập nhật</p>
         <div className={` focus-within:shadow-custom-green  relative w-1/3 rounded-full z-10 transition-all `}>
-          <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} className='peer w-full p-2 px-4 border-2 outline-none  text-gray-500 rounded-full focus:border-secondary transition-all' placeholder='Tìm kiếm: ex 101, meo meo' />
+          <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} className='peer w-full p-2 px-4 border-2 outline-none  text-gray-500 rounded-full focus:border-secondary transition-all' placeholder='Tìm kiếm: ex 101, Tien dien, admin1' />
           <FontAwesomeIcon icon={faMagnifyingGlass} className='absolute top-3 right-3 text-xl text-gray-500 peer-focus:-translate-x-2 peer-focus:scale-110 transition-all' />
         </div>
         <div className={`${show ? 'backdrop-blur-md shadow-custom-green' : ''} inline-flex items-center gap-4 mr-2 bg-secondary p-2 px-8 rounded-full text-white text-xl shadow hover:opacity-80 hover:-translate-x-2 transition-all ease-in-out cursor-pointer select-none`}  >
-          <p className='text-center font-semibold'>Thêm cư dân</p>
+          <p className='text-center font-semibold'>Chức năng gì đó</p>
           <FontAwesomeIcon icon={faPlus} className={show ? 'rotate-[225deg] -translate-x-2 scale-125 transition-all duration-500 ease-in-out' : 'transition-all duration-500 ease-in-out'} />
         </div>
       </section>

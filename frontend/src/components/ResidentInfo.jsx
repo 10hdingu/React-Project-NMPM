@@ -114,7 +114,7 @@ const ResidentInfo = ({ resident }) => {
 
 
   return (
-    <form onSubmit={handleUpdateSubmit} className='flex h-[32vh] p-2 rounded-lg border-2 bg-gray-100'>
+    <form onSubmit={handleUpdateSubmit} className='flex h-[32vh] p-2 rounded-lg border-2 bg-gray-100  hover:border-primary transition-all'>
       <div className='flex flex-col justify-between items-start text-gray-500 text-xl'>
         <img src={resident.image} alt="avatar" className='max-w-[150px]  object-cover' />
         <div className='flex justify-between w-[120px] m-4 mx-4 p-1'>
@@ -144,7 +144,7 @@ const ResidentInfo = ({ resident }) => {
           {isEdit ?
             <div className='flex'>
               <span className='font-semibold'>Thành viên:</span>
-              <input required type="number" name='numMember' value={updateResident.numMember} onChange={handleChange} className='px-1 ml-2 outline-none border focus:border-secondary max-w-[20px] rounded-sm' placeholder={resident.numMember} />
+              <input required type="number" name='numMember' value={updateResident.numMember} onChange={handleChange} className='px-1 ml-2 outline-none border focus:border-secondary max-w-[35px] rounded-sm' placeholder={resident.numMember} />
             </div>
             :
             <p><span className='font-semibold text-lg mr-2'>Thành viên:</span> {resident.numMember} </p>
