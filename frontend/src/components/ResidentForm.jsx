@@ -124,7 +124,7 @@ const ResidentForm = () => {
                 </div>
             </div>
 
-            <form onSubmit={handleSubmit} className={`${showResidentForm ? 'backdrop-blur-lg' : 'hidden'} absolute right-32 top-32  z-10 flex gap-16 px-8 py-8 bg-white max-w-6xl items-start shadow-lg transition-all`} >
+            <form onSubmit={handleSubmit} className={`${showResidentForm ? 'backdrop-blur-lg' : 'hidden'} absolute top-1/2 -translate-y-1/2 left-[15%]   z-10 flex gap-16 px-8 py-8 bg-white max-w-6xl items-start shadow-lg transition-all`} >
                 <div className='flex flex-col justify-center items-center gap-4 mb-8 text-gray-500 text-lg'>
                     <label htmlFor="resident-image" className='' >
                         <img src={residentImg ? URL.createObjectURL(residentImg) : assets.avatar_placeholder} alt="avatar" className='w-36 rounded-full cursor-pointer hover:opacity-70 hover:scale-105 p-2 transition-all' />

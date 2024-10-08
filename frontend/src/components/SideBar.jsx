@@ -12,7 +12,7 @@ const SideBar = () => {
 
 
 
-  const {username, setUsername, token, setToken, updatefeetoken, setUpdatefeetoken, createfeetoken, setCreatefeetoken, updateresidenttoken, setUpdateresidenttoken, roottoken, setRoottoken, backendUrl } = useContext(AppContext)
+  const { username, setUsername, token, setToken, updatefeetoken, setUpdatefeetoken, createfeetoken, setCreatefeetoken, updateresidenttoken, setUpdateresidenttoken, roottoken, setRoottoken, backendUrl } = useContext(AppContext)
 
 
   const logout = () => {
@@ -58,10 +58,12 @@ const SideBar = () => {
           <li className='px-8 flex hover:gap-4 justify-start items-center gap-2 text-base font-semibold text-gray-500 py-3  my-4  rounded-lg hover:text-white hover:bg-[rgba(126,188,110,0.32)] transition-all'>
             <FontAwesomeIcon icon={faClockRotateLeft} />Lịch sử</li>
         </NavLink >
-        <NavLink to='/admin'>
-          <li className='px-8 flex hover:gap-4 justify-start items-center gap-2 text-base font-semibold text-gray-500 py-3  my-4  rounded-lg hover:text-white hover:bg-[rgba(126,188,110,0.32)] transition-all'>
-            <FontAwesomeIcon icon={faUserTie} />Admin</li>
-        </NavLink>
+        {roottoken &&
+          <NavLink to='/admin'>
+            <li className='px-8 flex hover:gap-4 justify-start items-center gap-2 text-base font-semibold text-gray-500 py-3  my-4  rounded-lg hover:text-white hover:bg-[rgba(126,188,110,0.32)] transition-all'>
+              <FontAwesomeIcon icon={faUserTie} />Admin</li>
+          </NavLink>
+        }
       </ul>
 
       <hr className='w-1/2 border-2 rounded-lg border-primary mt-2 mb-[1vh]' />

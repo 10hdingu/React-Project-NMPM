@@ -12,7 +12,7 @@ import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
-  const { token, setToken } = useContext(AppContext);
+  const { token, setToken, roottoken } = useContext(AppContext);
 
   return (
     <>
@@ -41,7 +41,7 @@ const App = () => {
               <Route path='/fee' element={<Fee />} />
               <Route path='/history' element={<History />} />
               <Route path='/resident' element={<Resident />} />
-              <Route path='/admin' element={<Admin />} />
+              {roottoken &&<Route path='/admin' element={<Admin />} />}
             </Routes>
           </div>
         </div>

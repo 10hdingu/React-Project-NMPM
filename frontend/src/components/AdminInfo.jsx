@@ -72,7 +72,7 @@ const AdminInfo = ({ admin }) => {
 
 
     return (
-        <div className=' relative flex flex-col gap-4 p-6 hover:border-secondary border-2 rounded-xl h-[32vh] transition-all'>
+        <div className=' relative flex flex-col gap-4 p-6 hover:border-secondary hover:shadow-custom-green border-2 rounded-xl h-[32vh] transition-all'>
             <div className=' flex text-gray-600 text-lg'>
                 <p className='font-semibold'>Tên tài khoản: </p>
                 <p className='text-gray-500 ml-4 font-semibold border-b-2 min-w-[200px]'>{admin.username}</p>
