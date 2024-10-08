@@ -85,7 +85,7 @@ const FeeContextProvider = (props) => {
     useEffect(() => {
         if (fees.length > 0 && listFees.length === 0) {
             initListFees();
-            console.log(fees);
+            console.log('wtfaaaaaaaaaaaaa');
         } else {
             setListFees(listFees.map(f => fees.find(temp => temp._id === f._id)))
         }

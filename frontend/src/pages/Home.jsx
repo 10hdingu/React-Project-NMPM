@@ -23,11 +23,7 @@ const Home = () => {
   const [showChart, setShowChart] = useState(false)
 
   //effect 
-  useEffect(() => {
-
-    initListFees()
-
-  }, [])
+ 
 
 
   //function to handle submit

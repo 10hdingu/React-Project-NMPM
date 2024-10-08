@@ -61,8 +61,8 @@ const Fee = () => {
     }
     console.log(value);
     console.log(filters);
-    
-    
+
+
 
   }
 
@@ -321,10 +321,10 @@ const Fee = () => {
 
       </form>
 
-    {/* main section */}
+      {/* main section */}
       <section className={`p-8 py-6 h-[85%] z-0  bg-white border rounded-xl transition-all duration-700 ${showCreateFee ? 'blur-sm bg-gray-300 opacity-60' : ''} `}>
 
-            {/* filter */}
+        {/* filter */}
         <div className='flex justify-between items-center mb-4 select-none'>
           <div className='inline-flex items-center gap-4 p-2 px-4 rounded-full text-xl text-gray-600  hover:translate-x-2 transition-all'>
             <FontAwesomeIcon icon={faFilter} />
@@ -336,11 +336,11 @@ const Fee = () => {
               <FontAwesomeIcon icon={faFilter} />
               <span>Tạo trong tháng này</span>
             </div>
-            <div onClick={(e) => toggleFilter('DA_HOAN_THANH')}  className={`${filters.includes('DA_HOAN_THANH') ? 'bg-secondary border-none text-white' : ''}  inline-flex items-center gap-4 p-2 px-4 rounded-full text-gray-500 border-2 hover:-translate-x-2 cursor-pointer transition-all`}>
+            <div onClick={(e) => toggleFilter('DA_HOAN_THANH')} className={`${filters.includes('DA_HOAN_THANH') ? 'bg-secondary border-none text-white' : ''}  inline-flex items-center gap-4 p-2 px-4 rounded-full text-gray-500 border-2 hover:-translate-x-2 cursor-pointer transition-all`}>
               <FontAwesomeIcon icon={faFilter} />
               <span>Đã hoàn thành</span>
             </div>
-            <div onClick={(e) => toggleFilter('HET_HAN_TRONG_1_TUAN')}  className={`${filters.includes('HET_HAN_TRONG_1_TUAN') ? 'bg-secondary border-none text-white' : ''}  inline-flex items-center gap-4 p-2 px-4 rounded-full text-gray-500 border-2 hover:-translate-x-2 cursor-pointer transition-all`}>
+            <div onClick={(e) => toggleFilter('HET_HAN_TRONG_1_TUAN')} className={`${filters.includes('HET_HAN_TRONG_1_TUAN') ? 'bg-secondary border-none text-white' : ''}  inline-flex items-center gap-4 p-2 px-4 rounded-full text-gray-500 border-2 hover:-translate-x-2 cursor-pointer transition-all`}>
               <FontAwesomeIcon icon={faFilter} />
               <span>Hết hạn trong 1 tuần</span>
             </div>
@@ -368,12 +368,21 @@ const Fee = () => {
                   : <div className='max-w-[130px] text-center p-2 px-2 bg-violet-50 text-violet-400 text-sm font-semibold rounded-full'> Tự nguyện </div>} </div>
               <div className='text-center font-medium'>
                 <span className='font-medium text-primary'> {fee.feepayInfo.filter((e) => e.payed >= e.cost && e.payed > 0).length} </span>
-                / <span className='font-medium text-gray-500'> {fee.feepayInfo.length} </span></div>
+
+                {fee.feeType === 'TU_NGUYEN' ?
+                  <>
+                    <span className='text-primary'>hộ </span>
+                    <span className='text-violet-400'> | {fee.feepayInfo.reduce((accumulator, info) => accumulator + info.payed, 0)} </span>
+                  </>
+                  :
+                  <span className='font-medium text-gray-500'> / {fee.feepayInfo.length} </span>
+                }
+              </div>
               <div className='text-center text-gray-400 '> {formatDate(fee.createdAt)} </div>
               <div className='text-center text-gray-400'>{isExpired(fee.deadline)
                 ? <span className='line-through'>{formatDate(fee.deadline)}</span>
                 : <span> {formatDate(fee.deadline)} </span>}
-                <FontAwesomeIcon icon={faTrash} onClick={() => deleteFee(fee._id)} className='ml-6 invisible group-hover:visible' />
+                <FontAwesomeIcon icon={faTrash} onClick={() => deleteFee(fee._id)} className='ml-6 invisible group-hover:visible hover:opacity-80 hover:scale-110  transition-all' />
               </div>
             </div>
           ))}
