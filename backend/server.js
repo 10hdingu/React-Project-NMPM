@@ -22,8 +22,9 @@ connectCloudinary()
 app.use(cors({
     origin: '*', 
      // Change this to your frontend's URL
-  }));app.use(express.json())
-
+  }));
+  
+app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
 
 

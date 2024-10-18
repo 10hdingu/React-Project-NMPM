@@ -87,7 +87,7 @@ const FeeContextProvider = (props) => {
             initListFees();
             console.log('wtfaaaaaaaaaaaaa');
         } else {
-            setListFees(listFees.map(f => fees.find(temp => temp._id === f._id)))
+            setListFees(listFees.map(f => fees.find(temp => temp._id === f._id) || fees[0]))
         }
     }, [fees]);
 
