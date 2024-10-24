@@ -10,6 +10,8 @@ import { ResidentContext } from '../context/ResidentContext';
 
 
 const ResidentInfo = ({ resident }) => {
+  console.log('info');
+  
 
   const { backendUrl, updateresidenttoken } = useContext(AppContext)
   const { getAllResidents } = useContext(ResidentContext)
@@ -38,7 +40,8 @@ const ResidentInfo = ({ resident }) => {
   }
 
   const resetForm = () => {
-
+    console.log(resident);
+    
     setUpdateResident({
       room: resident.room,
       numMember: resident.numMember,
@@ -177,7 +180,7 @@ const ResidentInfo = ({ resident }) => {
               </select>
             </div>
             :
-            <p><span className='font-semibold text-lg mr-2'>Giới tính:</span> {resident.gender === ' male' ? 'Nam' : 'Nữ' } </p>
+            <p><span className='font-semibold text-lg mr-2'>Giới tính:</span> {resident.gender === 'male' ? 'Nam' : 'Nữ' } </p>
           }
         </div>
         <div className='text-lg mb-2'>

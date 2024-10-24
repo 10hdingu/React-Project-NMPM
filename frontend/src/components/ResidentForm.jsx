@@ -9,6 +9,7 @@ import { faMagnifyingGlass, faPlus } from '@fortawesome/free-solid-svg-icons';
 import ResidentInfo from './ResidentInfo';
 
 const ResidentForm = () => {
+    
     const [residentImg, setResidentImg] = useState('')
     const [room, setRoom] = useState('')
     const [name, setName] = useState('')
@@ -26,10 +27,13 @@ const ResidentForm = () => {
     const { backendUrl, updateresidenttoken, token } = useContext(AppContext)
     const { showResidentForm, setShowResidentForm, getAllResidents, residents } = useContext(ResidentContext)
 
-
+    
+    console.log('what');
+    console.log(residents);
+    
 
     const applyFilter = () => {
-        
+
         if (search) {
             setFilterResidents(residents.filter(re => re.room.includes(search) || re.name.toLowerCase().includes(search)))
         } else {
@@ -45,14 +49,14 @@ const ResidentForm = () => {
             getAllResidents()
         }
 
-    }, [token, residents])
+    }, [token])
 
 
     useEffect(() => {
 
         applyFilter()
 
-    }, [search])
+    }, [search, residents])
 
 
     const handleSubmit = async (e) => {
