@@ -163,7 +163,7 @@ const ResidentInfo = ({ resident }) => {
           {isEdit ?
             <div className='flex'>
               <span className='font-semibold'>Tuổi:</span>
-              <input required type="number" name='age' value={updateResident.age} onChange={handleChange} className='px-1 ml-2 outline-none border focus:border-secondary max-w-[40px] rounded-sm' placeholder={resident.age} />
+              <input required type="number" name='age' value={updateResident.age} onChange={handleChange} className='px-1 ml-2 outline-none border focus:border-secondary max-w-[50px] rounded-sm' placeholder={resident.age} />
             </div>
             :
             <p><span className='font-semibold text-lg mr-2'>Tuổi:</span> {resident.age} </p>
