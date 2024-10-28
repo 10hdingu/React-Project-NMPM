@@ -83,7 +83,7 @@ const updateFee = async (req, res) => {
         }
 
         if (roomEntry.payed == payed) {
-            return res.jsoon({success: false, message: "Số tiền nộp giống như cũ"})
+            return res.json({success: false, message: "Số tiền nộp giống như cũ"})
         }
 
         roomEntry.payed = payed;
