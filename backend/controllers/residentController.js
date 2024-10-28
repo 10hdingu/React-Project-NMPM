@@ -67,7 +67,8 @@ const updateResident = async (req, res) => {
 
         const { room, name, gender, age, cccd, phone, numMember } = req.body
         const updateData = req.body
-
+        console.log(updateData);
+        
         if (cccd && cccd.length !== 12) {
             return res.json({ success: false, message: "CCCD phải có đúng 12 số" })
         }
