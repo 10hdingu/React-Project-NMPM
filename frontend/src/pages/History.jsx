@@ -80,7 +80,7 @@ const History = () => {
         <div className='flex flex-col max-h-[90%] overflow-y-auto'>
           {filterHistories.map((record, index) => (
             <div key={index} className={`grid grid-cols-[1fr_1fr_0.5fr_0.7fr_0.7fr_1fr_1fr] min-h-[64px] p-2 px-4 items-center border-b border-b-gray-100 text-gray-700 ${index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}`}>
-              <div className='text-sm break-words text-[18px] text-gray-500 max-w-[80%] overflow-x-auto'>{record.feeId}</div>
+              <div className='text-sm break-words text-[18px] text-gray-300 max-w-[80%] overflow-x-auto'>{record.feeId}</div>
               <div className='font-medium text-[18px] text-gray-500'>{record.feeName}</div>
               <div className='font-medium text-[18px] text-gray-600'>{record.room}</div>
               <div className='font-medium text-[18px] text-gray-500'>{record.feeCost}</div>

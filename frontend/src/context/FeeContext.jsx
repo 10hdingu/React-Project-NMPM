@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import axios from "axios";
 import React, { createContext, useEffect, useState } from "react";
 import { toast } from "react-toastify";
@@ -33,7 +34,7 @@ const FeeContextProvider = (props) => {
             if (data.success) {
                 setFees(data.fees.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)))
             } else {
-                toast.error(error.message)
+                toast.error(data.message)
             }
             console.log(data);
 
@@ -54,7 +55,7 @@ const FeeContextProvider = (props) => {
             if (data.success) {
                 setHistories(data.histories.sort((a, b) => new Date(b.updateAt) - new Date(a.updateAt)))
             } else {
-                toast.error(error.message)
+                toast.error(data.message)
             }
 
         } catch (error) {
