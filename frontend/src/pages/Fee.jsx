@@ -93,12 +93,17 @@ const Fee = () => {
       if (filters.includes("THANG_NAY")) {
         searchFee = searchFee.filter((fee) => {
           const createdAtDay = new Date(fee.createdAt);
+          console.log(createdAtDay);
+          console.log(today.getMonth());
+          
           return (
-            createdAtDay.getFullYear === today.getFullYear &&
-            createdAtDay.getMonth === today.getMonth
+            createdAtDay.getFullYear() === today.getFullYear() &&
+            createdAtDay.getMonth() === today.getMonth()
           );
         });
       }
+      console.log(filters);
+      
 
       setFilterFees(searchFee);
       console.log(searchFee);
